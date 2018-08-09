@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="instantMessage.css" />
+<script type="text/javascript" src="instantMessage.js"></script>
+<script type="text/javascript">
+var im;
+function prepare() {
+	im = instantMessage.createMessageContainer();
+	document.body.appendChild(im.element);
+}
+function addMessage() {
+	im.createMessage({
+		content: "This is a message - that's not important at all; you may just ignore it.",
+		title: "Title"
+	});
+}
+function addMessage2() {
+	im.createMessage({
+		content: "This message has default title."
+	});
+}
+function addMessage3() {
+	im.createMessage({
+		content: "This message will automatically disappear in 3s.",
+		title: "Warning!",
+		stayTimeout: 3000
+	});
+}
+function addMessage4() {
+	im.createMessage({
+		content: "This message will take 1s to enter and 1s to leave.",
+		title: "Special message",
+		addTimeout: 1000,
+		removeTimeout: 1000
+	});
+}
+</script>
+</head>
+<body onload="prepare()">
+<input type="button" onclick="addMessage()" value="Add a message..." /><br />
+<input type="button" onclick="addMessage2()" value="Add a message with default title..." /><br />
+<input type="button" onclick="addMessage3()" value="Add a message with 3s life..." /><br />
+<input type="button" onclick="addMessage4()" value="Add a message with longer animation..." /><br />
+</body>
+</html>
