@@ -6,7 +6,7 @@
 <script type="text/javascript">
 var im;
 function prepare() {
-	im = instantMessage.createMessageContainer();
+	im = new MessageContainer();
 	document.body.appendChild(im.element);
 }
 function addMessage() {
