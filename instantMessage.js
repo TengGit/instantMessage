@@ -112,6 +112,7 @@ iM.removeMessage = function(arg) {
 	var i = indexOf(this._list, arg);
 	if (i !== null) {
 		var msg = this._list[i];
+		_list.splice(i, 1);
 		if (msg._int !== null) {
 			clearInterval(msg._int);
 			msg._int = null;
