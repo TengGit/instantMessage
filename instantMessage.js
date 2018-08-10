@@ -25,8 +25,8 @@ var MessageContainer = function() {
 
 function C(x) { return document.createElement(x); }
 function or(a, b) { return (a === undefined) ? b : (a || b); }
-var addTimeout = 300;
-var removeTimeout = 300;
+var addTimeout = 200;
+var removeTimeout = 200;
 var stayTimeout = 0;
 var perFrame = 20;
 
@@ -112,7 +112,7 @@ iM.removeMessage = function(arg) {
 	var i = indexOf(this._list, arg);
 	if (i !== null) {
 		var msg = this._list[i];
-		_list.splice(i, 1);
+		this._list.splice(i, 1);
 		if (msg._int !== null) {
 			clearInterval(msg._int);
 			msg._int = null;
